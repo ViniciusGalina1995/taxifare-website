@@ -1,7 +1,6 @@
 import streamlit as st
 import requests
 import pandas as pd
-import numpy as np
 '''
 # TaxiFareModel front
 '''
@@ -23,12 +22,12 @@ Either as with the title by just creating a string (or an f-string). Or as with 
 - dropoff latitude
 - passenger count
 '''
-datentime = st.text_input('Date and time')
-pickup_long = st.text_input('Pickup longitude')
-pickup_lat = st.text_input('Pickup latitude')
-dropoff_long = st.text_input('Dropoff longitude')
-dropoff_lat = st.text_input('Dropoff latitude')
-n_passengers = st.text_input('Number of passengers')
+datentime = st.text_input('Date and time', '2014-07-06 19:18:00')
+pickup_long = st.text_input('Pickup longitude', -73.950655)
+pickup_lat = st.text_input('Pickup latitude', 40.783282)
+dropoff_long = st.text_input('Dropoff longitude', -73.984365)
+dropoff_lat = st.text_input('Dropoff latitude', 40.769802)
+n_passengers = st.text_input('Number of passengers', 2)
 
 
 '''
@@ -80,5 +79,3 @@ def get_map_data():
 df = get_map_data()
 
 st.map(df)
-
-
